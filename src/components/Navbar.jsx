@@ -81,11 +81,17 @@ function Navbar() {
                         data.map((item )  => (
                              <li  className='p-5 group'><Link className='hover:font-bold hover:text-gray-600' to={item.link}>{item.page}</Link>
                              <div className='bg-red-500 w-[100vw]  p-4 absolute left-0 mt-3 hidden group-hover:block  '>
+                            
                                 {item.categories.map((pagecategories) => (
-                                        <p> {pagecategories.first} </p>
+                                        <div >
+
+                                    <p> {pagecategories.first} </p>
                                     
-                                    ))
-                                }
+                                    </div>
+                                ))
+                            }
+                                
+                               
                            
                              
                              </div>
