@@ -1,5 +1,9 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import image1 from "../images/logo.png";
+import {FaUser , FaCartPlus} from "react-icons/fa"
+
+<i class="fa-solid fa-cart-shopping"></i>
 
 const data =[
     {
@@ -66,8 +70,41 @@ function Navbar() {
                   <a className='hidden sm:block'>About</a>
                 </div>
 
-                <div>
-                    <Link to={"/"}></Link>
+                <div className='navigation flex items-center justify-around'>
+                    <div className='logo w-32'>
+                    <Link to={"/"} > <img src={image1}/> </Link>
+                    </div>
+
+                    <div className='options '>
+                   <ul className='flex text-lg'>
+                    {
+                        data.map((item )  => (
+                             <li  className='p-5 group'><Link className='hover:font-bold hover:text-gray-600' to={item.link}>{item.page}</Link>
+                             <div className='bg-red-500 w-[100vw]  p-4 absolute left-0 mt-3 hidden group-hover:block  '>
+                                {item.categories.map((pagecategories) => (
+                                        <p> {pagecategories.first} </p>
+                                    
+                                    ))
+                                }
+                           
+                             
+                             </div>
+                            
+                              </li>
+
+                        ))
+                    }
+                   </ul>
+                    </div>
+
+                    <div className='icons flex  '>
+                        <div className='p-3'>  <FaUser size={25}/></div>
+                       
+                        <button>Sign In</button>
+                        <div className='p-3'>  <FaCartPlus size={25} /></div>
+
+                    </div>
+                   
                    
                 </div>
 
