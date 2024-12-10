@@ -48,6 +48,7 @@ const sliderData = [
 ]
 
 const Home = () => {
+    
   return (
     <div >
         <div className='mt-32 '>
@@ -92,25 +93,27 @@ const Home = () => {
 
         </div>
              
-       <div className='mt-14 bg-red-500 '>
+       <div className='mt-14  '>
         <h1 className='text-center font-bold text-gray-700 mb-14'>Most Loved Snacks</h1>
+        <div className='grid grid-cols-1 gap-3 p-3 rounded-md m-3 '>
         {
             
             sliderData.map((item ,key)=>(
-                <div>
-                         <img key={key} src={item.image}/> 
+                <div className='shadow-sm shadow-gray-500 shadow-blur-md shadow-offset m-4 '>
+                         <img className=' w-full'  key={key} src={item.image}/> 
                          <p>{item.name}</p>
+                         <div className='flex'>
                          <p>{item.price}</p>
                          <button>Add to Cart</button>
+                         </div>
+                         
                 </div>
-                   
-                   
-                
-
             ))
             
         }
        
+        </div>
+        
         
 
        </div>
