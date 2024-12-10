@@ -6,6 +6,47 @@ import image5 from "../images/healthimg.png"
 import image6 from "../images/traditionalimg.png"
 import image7 from "../images/snackimg.png"
 import image8 from "../images/ladoosimg.png"
+import image9 from "../images/chakli.jpg"
+import image10 from "../images/puranpoliimg.jpg"
+import image11 from "../images/modak.jpg"
+import image12 from "../images/kachori.jpg"
+import image13 from "../images/chivda.jpg"
+
+
+
+const sliderData = [
+    {
+        image:image9,
+        name: "Bhajani Chakli",
+        price:'169',
+
+    },
+    {
+        image:image10,
+        name: "Handmade Puranpoli",
+        price:'199',
+
+    },
+    {
+        image:image11,
+        name: "Handmade Ukadiche Modak",
+        price:'219',
+
+    },
+    {
+        image:image12,
+        name: "Kachori",
+        price:'169',
+
+    },
+    {
+        image:image13,
+        name: "Chivda",
+        price:'179',
+
+    },
+]
+
 const Home = () => {
   return (
     <div >
@@ -51,7 +92,28 @@ const Home = () => {
 
         </div>
              
+       <div className='mt-14 bg-red-500 '>
+        <h1 className='text-center font-bold text-gray-700 mb-14'>Most Loved Snacks</h1>
+        {
+            
+            sliderData.map((item ,key)=>(
+                <div>
+                         <img key={key} src={item.image}/> 
+                         <p>{item.name}</p>
+                         <p>{item.price}</p>
+                         <button>Add to Cart</button>
+                </div>
+                   
+                   
+                
 
+            ))
+            
+        }
+       
+        
+
+       </div>
 
       
       
