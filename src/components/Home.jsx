@@ -93,18 +93,18 @@ const Home = () => {
 
         </div>
              
-       <div className='mt-14  '>
-        <h1 className='text-center font-bold text-gray-700 mb-14'>Most Loved Snacks</h1>
-        <div className='grid grid-cols-1 gap-3 p-3 rounded-md m-3 '>
+       <div className='mt-14 sm:w-[80vw] sm:mx-auto '>
+        <h1 className='text-center font-bold text-gray-700 mb-14 sm:text-xl md:text-3xl '>Most Loved Snacks</h1>
+        <div className='grid grid-cols-2 gap-2 p-3 rounded-md m-1 sm:grid-cols-3 lg:grid-cols-4'>
         {
             
             sliderData.map((item ,key)=>(
-                <div className='shadow-sm shadow-gray-500 shadow-blur-md shadow-offset m-4 '>
-                         <img className=' w-full'  key={key} src={item.image}/> 
-                         <p>{item.name}</p>
-                         <div className='flex'>
-                         <p>{item.price}</p>
-                         <button>Add to Cart</button>
+                <div className='shadow-lg shadow-gray-400 shadow-blur-lg m-1  rounded-md'>
+                         <img className=' w-full rounded-tl-md rounded-tr-md '  key={key} src={item.image}/> 
+                         <p className='text-orange-500 font-medium m-2'> {item.name}</p>
+                         <div className='flex text-orange-500 justify-between p-2 font-medium mt-8'>
+                         <p> &#x20b9;{item.price}</p>
+                         <button className='bg-orange-500 text-white p-1 rounded-md pl-2 pr-2'>Add to Cart</button>
                          </div>
                          
                 </div>
