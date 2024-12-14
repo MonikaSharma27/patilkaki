@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Link } from "react-router-dom";
 import image1 from "../images/logo.png";
 import { FaUser, FaCartPlus , FaBars} from "react-icons/fa";
@@ -54,6 +54,15 @@ const data = [
 ];
 
 function Navbar() {
+
+const [showDiv, setShowDiv] = useState(false)
+
+const handleClick =()=>{
+    setShowDiv(!showDiv);
+   
+};
+
+
     return (
         <div>
             <nav className='fixed top-0' >
@@ -70,7 +79,7 @@ function Navbar() {
                         </Link>
                     </div>
 
-                    <div className={'options'}>
+                    <div className='options hidden lg:block '>
                         <ul className='flex text-lg '>
                             {data.map((item, index) => (
                                 <li key={index} className='p-5 group relative '>
@@ -92,14 +101,41 @@ function Navbar() {
 
                    
 
-                    <div className='icons flex'>
-                        <div className='p-3'>
+                    <div className='icons flex '>
+                        <div className='p-3 hidden lg:block'>
                             <FaUser size={25} />
                         </div>
-                        <button>Sign In</button>
-                        <div className='p-3'>
+                        <button className='hidden lg:block'>Sign In</button>
+                        <div className='p-3 hidden lg:block'>
                             <FaCartPlus size={25} />
                         </div>
+                    </div>
+
+                    <div className='menubar lg:hidden ' >
+                        {
+                             showDiv ? <HiX className='text-white bg-orange-500  w-10 h-9 rounded-md' size={20} onClick={handleClick}/> :  <FaBars className='text-white bg-orange-500  w-10 h-9 rounded-md' onClick={handleClick}  size={20}/>
+                        }
+                       
+                        <div className={` ${showDiv ? "block" : "hidden"} inline-block bg-white absolute top-28 right-0 w-56`}>
+                        <ul className=' text-lg '>
+                            {data.map((item, index) => (
+                                <li key={index} className='p-5 group relative '>
+                                    <p className='hover:font-bold hover:text-orange-500' >
+                                        {item.page}
+                                    </p>
+                                    <div className='bg-gray-100  p-4 absolute z-50  left-auto mt-1 rounded-md hidden group-hover:block '>
+                                        <div className='flex flex-col w-40 '>
+                                        {Object.values(item.categories).map((category, idx) => (
+                                            <Link key={idx} className="text-black p-1  hover:text-orange-500 hover:font-medium " to={category}>{category}</Link>
+                                        ))}
+                                        </div>
+                                       
+                                    </div>
+                                </li>
+                            ))}
+                        </ul>
+                        </div>
+
                     </div>
                 </div>
 
@@ -107,6 +143,10 @@ function Navbar() {
 
                 </div>
             </nav>
+
+
+
+
         </div>
     );
 }
