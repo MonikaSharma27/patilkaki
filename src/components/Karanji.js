@@ -8,11 +8,11 @@ const Karanji = () => {
       <h1 className='ml-11 font-bold text-gray-700 md:text-xl'>Home / Products / Karanji / Gujiya – Double Layer</h1>
       </div>
      
-     <div className='md:grid md:grid-cols-2'>
-        <div className='img m-4  '>
+      <div className='md:grid md:grid-cols-[2fr_3fr] '>
+        <div className='img mt-4 '>
           <img className='md:h-5/6 md:ml-11' src={Image14}></img>
         </div>
-        <div className='content mt-16 p-4 md:m-4 '>
+        <div className='content mt-16 p-2 md:m-4 '>
             <div>
             <h1 className='font-bold text-lg text-center mb-5 text-gray-700 md:text-start md:text-xl'>Karanji / Gujiya – Double Layer (200 gms)</h1>
             <p className='font-medium text-gray-700 '>One of the best traditional sweets of Maharashtra, Karanji is a sweet savory snack often made for festive occasions like Diwali and Ganesh Chaturthi. It is very popular in North India as Gujiya. Our Karanjis are made of double layer, which means an extra layer of crunchiness. Once you have that, the filling hits your mouth and it is such a pleasant feeling that it only keeps you wanting more and more. Missing Karanjis because you can only have them once in a year? Problem solved- our Karanjis are available year round.</p>
@@ -38,7 +38,7 @@ const Karanji = () => {
                 </div>
 
                 </div>
-                <p className='pl-4 pr-4 text-center text-green-800'>Coupon successfully unlocked! Check your cart now</p>
+                <p className='pl-4 pr-4 text-center text-green-800 md:pb-4'>Coupon successfully unlocked! Check your cart now</p>
                 
             </div>
            
