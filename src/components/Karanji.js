@@ -1,16 +1,28 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Image14 from "../images/gujiya.jpg"
 
-const Karanji = () => {
+const Karanji = (props) => {
+const [count, setCount]= useState(0);
+
+const handleDecrease= ()=>{
+ if (count>0){
+  setCount(count-1);
+ }
+}
+
+const handleIncrease = () =>{
+  setCount(count+1);
+}
+
   return (
     <div >
       <div className='mt-44 mb-3'>
       <h1 className='ml-11 font-bold text-gray-700 md:text-xl'>Home / Products / Karanji / Gujiya – Double Layer</h1>
       </div>
      
-      <div className='md:grid md:grid-cols-[2fr_3fr] '>
+      <div className='md:grid md:grid-cols-[2fr_3fr] md:ml-3 '>
         <div className='img mt-4 '>
-          <img className='md:h-5/6 md:ml-11' src={Image14}></img>
+          <img className='md:h-5/6 md:ml-5 w-full md:pr-5' src={props.image || Image14}></img>
         </div>
         <div className='content mt-16 p-2 md:m-4 '>
             <div>
@@ -29,7 +41,7 @@ const Karanji = () => {
                 <div className='w-[30vw] p-2' >
                     <p>With 10% off</p>
                     <p className='text-center text-lg'>₹197.1</p>
-                    <p className='text-green-800 border-2 border-green-800'>LOWEST PRICE</p>
+                    <p className='text-green-800 border-2 border-green-800 '>LOWEST PRICE</p>
 
                 </div>
                 <div className='h-20 border-l-2 border-gray-400 '></div>
@@ -38,11 +50,28 @@ const Karanji = () => {
                 </div>
 
                 </div>
-                <p className='pl-4 pr-4 text-center text-green-800 md:pb-4'>Coupon successfully unlocked! Check your cart now</p>
+                <p className='pl-4 pr-4 text-center text-green-800 pb-4'>Coupon successfully unlocked! Check your cart now</p>
                 
             </div>
-           
+
+            <div className='flex justify-between items-center mt-8 md:w-[33vw] '>
+              <div className='border-2 border-gray-300 '>
+                <select name='Dropdown ' className='text-xl text-gray-700 p-2 pl-3 pr-3' >
+                     <option value="200 gms" >200 gms</option>
+                </select>
+              </div>
+              <div className=' text-2xl  '>
+                <button className='bg-orange-500 p-2 pl-4 pr-4 border-t-2 border-b-2 border-orange-500 border-solid text-white' onClick={handleDecrease}>-</button>
+                <button className='p-2 pl-3 pr-3 border-t-2 border-b-2 border-gray-300 border-solid text-orange-500'>{count}</button>
+                <button className='bg-orange-500 p-2  pl-4 pr-4 border-t-2 border-b-2 border-orange-500 border-solid text-white'  onClick={handleIncrease}>+</button>
+              </div>
+          </div>
+        
+        <div className='md:text-start  text-center'>
+          <button className='bg-orange-500 text-white w-[80vw] mt-6 text-xl p-2 rounded-full md:w-[33vw]'>Add to Cart</button>
         </div>
+        </div>
+       
      </div>
     </div>
   )

@@ -5,6 +5,8 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Footer from './components/Footer';
 import Karanji from './components/Karanji';
+import Modak from './components/Modak';
+import Puranpoli from './components/Puranpoli';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
       <Routes>
       <Route index path='/' element={<Home/>}/>
       <Route index path={"/Karanji"} element={<Karanji />}/>
+      <Route index path={"/Modak"} element={<Modak />}/>
+      <Route index path={"/Puranpoli"} element={<Puranpoli />}/>
       </Routes>
    
      
